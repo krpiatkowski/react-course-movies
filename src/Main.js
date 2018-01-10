@@ -1,5 +1,5 @@
-import React from "react";
-import NavigationBar from "./NavigationBar";
+import React from "react"
+import NavigationBar from "./NavigationBar"
 import MovieList from "./MovieList"
 import Footer from "./Footer"
 
