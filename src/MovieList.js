@@ -9,7 +9,7 @@ export default class MovieList extends React.Component {
 
     render() {
         return (
-            <div id="movie-list">
+            <div id="content">
                 {
                     this.movies.map(movie => {
                         return <img src={movie.imageUrl} key={movie.id} alt={movie.description} onClick={() => this.onClick(movie)}/>
