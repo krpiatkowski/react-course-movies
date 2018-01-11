@@ -4,4 +4,4 @@ import Main from "./Main"
 
 import './index.css'
 
-ReactDOM.render(<Main title="Movie list"/>, document.getElementById('root'))
+ReactDOM.render(<Main/>, document.getElementById('root'))

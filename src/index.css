@@ -20,22 +20,26 @@ body {
   overflow: scroll;
 }
 
-#main-header {
-  padding-left: 10px;
+#header {
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
-#movie-list {
+#content {
   flex: 1;
 }
 
-#movie-list img {
-  padding: 10px;
-}
-
-#navigation-bar, #footer {
+#navigation-bar{
   background-color: #393d3f;
   height: 50px;
   min-height: 50px;
   width: 100%;
 }
 
+#footer {
+  background-color: #393d3f;
+  height: 50px;
+  min-height: 50px;
+  width: 100%;
+}
