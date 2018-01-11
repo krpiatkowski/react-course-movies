@@ -1,7 +1,15 @@
 import React from "react"
+import Axios from "axios"
 
 export default class MovieList extends React.Component {
-    movies = require("./resources/movies.json")
+    movies = []
+
+    componentWillMount(){
+        Axios.get("http://localhost:3001/movies").then((res) => {
+            this.movies = res.data
+            this.forceUpdate()
+        })
+    }
 
     onClick(movie) {
         alert(`You just clicked ${movie.title}`)
