@@ -30,6 +30,10 @@ body {
   flex: 1;
 }
 
+#movie-list {
+  flex: 1;
+}
+
 #navigation-bar{
   background-color: #393d3f;
   height: 50px;

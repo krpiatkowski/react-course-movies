@@ -1,6 +1,6 @@
 import React from "react"
 import NavigationBar from "./NavigationBar"
-import MovieList from "./MovieList"
+import Content from "./Content"
 import Footer from "./Footer"
 import Header from "./Header"
 
@@ -10,7 +10,7 @@ export default class Main extends React.Component {
             <div id="main">
                 <NavigationBar />
                 <Header title="Movie list" />
-                <MovieList />
+                <Content />
                 <Footer />
             </div>
         )
