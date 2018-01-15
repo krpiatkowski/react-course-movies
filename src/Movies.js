@@ -21,8 +21,8 @@ export default class Movies extends React.Component {
             <div id="movies">
                 <MovieList onSelectMovie={this.onSelectMovie} />
                 {
-                    this.state.movie && (
-                        <MovieDetails selectedMovie={this.state.movie} />
+                    this.state.selectedMovie && (
+                        <MovieDetails movie={this.state.selectedMovie} />
                     )
                 }
             </div>
