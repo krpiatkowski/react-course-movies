@@ -18,7 +18,9 @@ export default class MovieList extends React.Component {
     }
 
     onClick(movie) {
-                alert(`You just clicked ${movie.title}`)
+        if(this.props.onSelectMovie) {
+            this.props.onSelectMovie(movie)
+        }
     }
 
     render() {
