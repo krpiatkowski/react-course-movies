@@ -8,21 +8,21 @@ export default class Movies extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            movie: null
+            selectedMovie: null
         }
     }
 
-    didSelectMovie = (movie) => {
-        this.setState({ movie: movie })
+    onSelectMovie = (movie) => {
+        this.setState({ selectedMovie: movie })
     }
 
     render() {
         return (
             <div id="movies">
-                <MovieList onSelectMovie={this.didSelectMovie} />
+                <MovieList onSelectMovie={this.onSelectMovie} />
                 {
                     this.state.movie && (
-                        <MovieDetails movie={this.state.movie} />
+                        <MovieDetails selectedMovie={this.state.movie} />
                     )
                 }
             </div>
