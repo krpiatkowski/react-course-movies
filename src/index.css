@@ -20,11 +20,17 @@ body {
   overflow: scroll;
 }
 
+.search {
+  font-size: 40px;
+  padding: 10px;
+}
+
 #header {
   padding: 10px;
   font-size: 40px;
   font-weight: bold;
 }
+
 #navigation-bar{
   background-color: #393d3f;
   height: 50px;
@@ -33,9 +39,8 @@ body {
 }
 
 #content {
-  flex: 1;
   display: flex;
-  flex-direction: row;
+  flex: 1;
 }
 
 #footer {
@@ -47,7 +52,14 @@ body {
 
 #movies {
   display: flex;
-  flex: 1;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+}
+
+#movies .search {
+  flex: 1 100%;
+  height: 50px;
 }
 
 #movie-list {
