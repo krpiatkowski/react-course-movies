@@ -57,13 +57,31 @@ body {
   width: 100%;
 }
 
+.movie-with-title {
+  width: 182px;
+  text-align: center;
+  margin: 10px;
+}
+
+.movie-with-title>.movie{
+  margin: 0px;  
+}
+
+.movie {
+  margin: 10px;
+}
+
 #movies .search {
   flex: 1 100%;
   height: 50px;
 }
 
 #movie-list {
+  display: flex;
   flex: 1;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 #movie-details {
@@ -71,6 +89,7 @@ body {
   background-color: #546a7b;
   color: #ffffff;
   padding: 20px;
+  height: 100%;
 }
 
 #movie-details-title {
