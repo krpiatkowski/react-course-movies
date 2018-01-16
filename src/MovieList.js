@@ -1,6 +1,8 @@
 import React from "react"
 import Axios from "axios"
 
+import Movie from "./Movie"
+
 export default class MovieList extends React.Component {
     movies = []
 
@@ -12,6 +14,7 @@ export default class MovieList extends React.Component {
     }
 
     onClick(movie) {
+        console.log(movie)
         alert(`You just clicked ${movie.title}`)
     }
 
@@ -19,9 +22,7 @@ export default class MovieList extends React.Component {
         return (
             <div id="movie-list">
                 {
-                    this.movies.map(movie => {
-                        return <img src={movie.imageUrl} key={movie.id} alt={movie.description} onClick={() => this.onClick(movie)}/>
-                    })
+                    this.movies.map(movie => <Movie movie={movie} onClick={() => this.onClick(movie)} key={movie.id}/>)
                 }
             </div>
         )
