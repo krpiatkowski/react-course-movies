@@ -25,6 +25,11 @@ body {
   padding: 10px;
 }
 
+.stars {
+  display: flex;
+  cursor: pointer; 
+}
+
 #header {
   padding: 10px;
   font-size: 40px;
@@ -68,6 +73,8 @@ body {
 }
 
 .movie {
+  width: 168px;
+  height: 268px;
   margin: 10px;
 }
 
@@ -103,8 +110,9 @@ body {
   border-bottom: 0px;
 }
 
-
 #movie-details {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   background-color: #546a7b;
   color: #ffffff;
@@ -112,7 +120,16 @@ body {
   height: 100%;
 }
 
+#movie-details>.movie {
+  align-self: center;
+}
+
 #movie-details-title {
   font-size: 36px;
   text-align: center;  
+}
+
+#movie-details>.stars {
+  font-size: 30px;
+  padding: 10px;
 }

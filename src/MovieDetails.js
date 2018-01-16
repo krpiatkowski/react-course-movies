@@ -1,5 +1,6 @@
 import React from "react"
 import Movie from "./Movie"
+import Stars from "./Stars"
 
 export default class MovieDetails extends React.Component {
 
@@ -11,6 +12,7 @@ export default class MovieDetails extends React.Component {
                 <div id="movie-details-descripton">
                     {this.props.movie.description}
                 </div>
+                <Stars score={-1} max={5}/>
             </div>
         )
     }
