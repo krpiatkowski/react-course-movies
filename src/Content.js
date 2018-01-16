@@ -5,7 +5,7 @@ export default class Content extends React.Component {
     render() {
         return (
             <div id="content">
-                <Movies />
+                <Movies/>
             </div>
         )
     }

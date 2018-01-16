@@ -5,6 +5,11 @@ import MovieList from "./MovieList"
 import MovieDetails from "./MovieDetails"
 import Search from "./Search"
 
+import {
+    Route,
+    Switch
+  } from 'react-router-dom'
+
 
 export default class Movies extends React.Component {
     constructor(props) {
@@ -35,22 +40,26 @@ export default class Movies extends React.Component {
         })
     }
 
-    onSelectMovie = (movie) => {
-        this.setState({
-            selectedMovie: movie
-        })
+    getMovie = (id) => {
+        return this.state.filteredMovies.find(movie => movie.id === Number(id))
     }
 
     render() {
         return (
             <div id="movies">
                 <Search onSearch={this.onSearch}/>
-                <MovieList movies={this.state.filteredMovies} onSelectMovie={this.onSelectMovie} />
-                {
-                    this.state.selectedMovie && (
-                        <MovieDetails movie={this.state.selectedMovie} />
-                    )
-                }
+                <MovieList movies={this.state.filteredMovies} />
+                <Switch>
+                    <Route path="/:id" render={({match}) => {
+                        let movie = this.getMovie(match.params.id)
+
+                        if (movie === undefined) {
+                            return "No movie with that id was found"
+                        } else {
+                            return <MovieDetails movie={movie} />
+                        }
+                    }} />
+                </Switch>
             </div >
         )
     }
