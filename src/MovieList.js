@@ -1,5 +1,7 @@
 import React from "react"
 
+import Movie from "./Movie"
+
 export default class MovieList extends React.Component {
     onClick(movie) {
         if(this.props.onSelectMovie) {
@@ -12,9 +14,7 @@ export default class MovieList extends React.Component {
             <div id="movie-list">
                 {
                     this.props.movies && (
-                        this.props.movies.map(movie => {
-                            return <img src={movie.imageUrl} key={movie.id} alt={movie.description} onClick={() => this.onClick(movie)} />
-                        })    
+                        this.props.movies.map(movie => <Movie movie={movie} onClick={() => this.onClick(movie)} key={movie.id} />)    
                     )
                 }
             </div>
