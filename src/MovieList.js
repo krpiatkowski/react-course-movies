@@ -14,7 +14,6 @@ export default class MovieList extends React.Component {
     }
 
     onClick(movie) {
-        console.log(movie)
         alert(`You just clicked ${movie.title}`)
     }
 
