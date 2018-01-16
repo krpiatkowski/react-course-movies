@@ -12,7 +12,7 @@ export default class MovieList extends React.Component {
                         this.props.movies.map(movie => {
                             return (
                                 <Link to={`${movie.id}`} key={movie.id}>
-                                    <img src={movie.imageUrl} alt={movie.description} />
+                                    <MovieWithTitle movie={movie} />
                                 </Link>
                             )
                         })

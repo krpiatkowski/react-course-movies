@@ -60,7 +60,7 @@ body {
 .movie-with-title {
   width: 182px;
   text-align: center;
-  margin: 10px;
+  margin: 10px;  
 }
 
 .movie-with-title>.movie{
@@ -83,6 +83,26 @@ body {
   flex-wrap: wrap;
   align-content: flex-start;
 }
+
+#movie-list a {
+  color: #333333;
+}
+
+#movie-list a:visited {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
+#movie-list a:active {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
+#movie-list a:link {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
 
 #movie-details {
   flex: 1;
