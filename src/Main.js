@@ -3,6 +3,7 @@ import NavigationBar from "./NavigationBar"
 import Content from "./Content"
 import Footer from "./Footer"
 import Header from "./Header"
+import Movies from "./Movies"
 
 export default class Main extends React.Component {
     render() {
@@ -10,7 +11,9 @@ export default class Main extends React.Component {
             <div id="main">
                 <NavigationBar />
                 <Header title="Movie list" />
-                <Content />
+                <Content>
+                    <Movies />
+                </Content>
                 <Footer />
             </div>
         )
