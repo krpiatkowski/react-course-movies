@@ -1,6 +1,8 @@
 import React from "react"
 import Axios from "axios"
 
+import Movie from "./Movie"
+
 export default class MovieList extends React.Component {
     constructor(props) {
         super(props)
@@ -27,9 +29,7 @@ export default class MovieList extends React.Component {
         return (
             <div id="movie-list">
                 {
-                    this.state.movies.map(movie => {
-                        return <img src={movie.imageUrl} key={movie.id} alt={movie.description} onClick={() => this.onClick(movie)} />
-                    })
+                    this.state.movies.map(movie => <Movie movie={movie} onClick={() => this.onClick(movie)} key={movie.id}/>)
                 }
             </div>
         )
