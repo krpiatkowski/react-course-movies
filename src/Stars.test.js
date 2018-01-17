@@ -39,3 +39,10 @@ it('can click-hover on star', () => {
     stars.childAt(0).childAt(8).simulate('mouseOut')    
     expect(stars.text()).toEqual("★★★★☆☆☆☆☆☆")
 })
+
+it('can return the score', () => {
+    let stars = mount(<Stars score={1} max={10} onScore={(score) => {
+        expect(score).toBe(5)
+    }}/>)
+    stars.childAt(0).childAt(4).simulate('click')    
+})
