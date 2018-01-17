@@ -33,14 +33,14 @@ export default class Stars extends React.Component {
 
     render() {
         return (
-            <div class="stars" onMouseOut={this.onMouseOut}>
+            <div className="stars" onMouseOut={this.onMouseOut}>
                 {
                     Array(this.props.max).fill().map((_, i) =>
                         <div
                             key={i}
-                            onClick={() => this.onClick(i)}
-                            onMouseOver={() => this.onMouseOver(i)}>
-                            {String.fromCharCode(i <= this.state.hoverScore ? 9733 : 9734)}
+                            onClick={() => this.onClick(i+1)}
+                            onMouseOver={() => this.onMouseOver(i+1)}>
+                            {(i < this.state.hoverScore ? Stars.EMPTY_STAR : Stars.FILLED_STAR)}
                         </div>
                     )
                 }
@@ -48,3 +48,6 @@ export default class Stars extends React.Component {
         )
     }
 }
+
+Stars.EMPTY_STAR = String.fromCharCode(9733)
+Stars.FILLED_STAR = String.fromCharCode(9734)
