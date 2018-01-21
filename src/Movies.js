@@ -50,7 +50,7 @@ export default class Movies extends React.Component {
                 <Search onSearch={this.onSearch}/>
                 <MovieList movies={this.state.filteredMovies} />
                 <Switch>
-                    <Route path="/:id" render={({match}) => {
+                    <Route path="/movies/:id" render={({match}) => {
                         let movie = this.getMovie(match.params.id)
 
                         if (movie === undefined) {
