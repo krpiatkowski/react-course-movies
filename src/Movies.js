@@ -1,25 +1,23 @@
 import React from "react"
 import Axios from "axios"
 
+import Header from "./Header"
 import MovieList from "./MovieList"
 import MovieDetails from "./MovieDetails"
 import Search from "./Search"
 
-import {
-    Route,
-    Switch
-  } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 
 export default class Movies extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: [],
-            filteredMovies: [],
+            filteredMovies: null,
             selectedMovie: null
         }
     }
+
 
     componentWillMount() {
         Axios.get("http://localhost:3001/movies").then((res) => {
@@ -45,26 +43,31 @@ export default class Movies extends React.Component {
     }
 
     onClose = () => {
-        
+
     }
 
     render() {
         return (
-            <div id="movies">
-                <Search onSearch={this.onSearch}/>
-                <MovieList movies={this.state.filteredMovies} />
-                <Switch>
-                    <Route path="/movie/:id" render={({match}) => {
-                        let movie = this.getMovie(match.params.id)
+            this.state.filteredMovies ? (
+                <div id="movies">
+                    <Header title="Movie list" />
+                    <Search onSearch={this.onSearch} />
+                    <MovieList movies={this.state.filteredMovies} />
 
+                    <Route path="/movies/:id" render={({ history, match }) => {
+                        let movie = this.getMovie(match.params.id)
                         if (movie === undefined) {
                             return "No movie with that id was found"
                         } else {
-                            return <MovieDetails movie={movie} onClose="/movies" />
+                            return <MovieDetails movie={movie} onClose={() => {
+                                history.goBack()
+                            }} />
                         }
                     }} />
-                </Switch>
-            </div >
+                </div >
+            ) : (
+                    <div>Loading...</div>
+                )
         )
     }
 }

@@ -13,11 +13,11 @@ body {
 }
 
 #main {
-  height: 100%;
   background-color: #C6C5B9;
   display: flex;  
   flex-direction: column;
   overflow: scroll;
+  min-height: 100%;
 }
 
 .search {
@@ -43,6 +43,34 @@ body {
   width: 100%;
 }
 
+#navigation-bar ul {
+  display: flex;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+#navigation-bar li {
+  display: flex;
+  vertical-align: center;
+  line-height: 50px; 
+}
+
+#navigation-bar li a {
+  display: flex;
+  height: 100%;
+  color: #ffffff;    
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+}
+
+#navigation-bar li a.active {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 #content {
   display: flex;
   flex: 1;
@@ -51,7 +79,6 @@ body {
 #footer {
   background-color: #393d3f;
   height: 50px;
-  min-height: 50px;
   width: 100%;
 }
 
