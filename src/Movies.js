@@ -41,6 +41,10 @@ export default class Movies extends React.Component {
         })
     }
 
+    onClose = () => {
+        this.setState({selectedMovie: null})
+    }
+
     render() {
         return (
             <div id="movies">
@@ -48,7 +52,7 @@ export default class Movies extends React.Component {
                 <MovieList movies={this.state.filteredMovies} onSelectMovie={this.onSelectMovie} />
                 {
                     this.state.selectedMovie && (
-                        <MovieDetails movie={this.state.selectedMovie} />
+                        <MovieDetails movie={this.state.selectedMovie} onClose={this.onClose}/>
                     )
                 }
             </div >
