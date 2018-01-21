@@ -16,13 +16,17 @@ export default class Movies extends React.Component {
         this.setState({ selectedMovie: movie })
     }
 
+    onClose = () => {
+        this.setState({selectedMovie: null})
+    }
+
     render() {
         return (
             <div id="movies">
                 <MovieList onSelectMovie={this.onSelectMovie} />
                 {
                     this.state.selectedMovie && (
-                        <MovieDetails movie={this.state.selectedMovie} />
+                        <MovieDetails movie={this.state.selectedMovie} onClose={this.onClose}/>
                     )
                 }
             </div>
