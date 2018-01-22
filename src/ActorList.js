@@ -6,7 +6,7 @@ import Header from "./Header"
 export default class ActorList extends React.Component {
     render() {
         return (
-            <div>
+            <div id="actor-list">
                 <Header title="Actors" />
                 <ul>
                     {

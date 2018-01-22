@@ -12,6 +12,21 @@ body {
   background-color: #546a7b;
 }
 
+a:visited {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
+a:active {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
+a:link {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
 #main {
   background-color: #C6C5B9;
   display: flex;  
@@ -122,19 +137,12 @@ body {
   color: #333333;
 }
 
-#movie-list a:visited {
-  text-decoration: none;
-  border-bottom: 0px;
+#actor-list ul {
+  list-style: none;
 }
 
-#movie-list a:active {
-  text-decoration: none;
-  border-bottom: 0px;
-}
-
-#movie-list a:link {
-  text-decoration: none;
-  border-bottom: 0px;
+#actor-list a {
+  color: #333333;
 }
 
 #movie-details {
@@ -173,21 +181,6 @@ body {
 
 #movie-details-close a {
   color: #ffffff;
-}
-
-#movie-details-close a:visited {
-  text-decoration: none;
-  border-bottom: 0px;
-}
-
-#movie-details-close a:active {
-  text-decoration: none;
-  border-bottom: 0px;
-}
-
-#movie-details-close a:link {
-  text-decoration: none;
-  border-bottom: 0px;
 }
 
 #movie-details>.stars {
