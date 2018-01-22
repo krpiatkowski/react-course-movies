@@ -44,23 +44,21 @@ export default class Movies extends React.Component {
         return this.state.filteredMovies.find(movie => movie.id === Number(id))
     }
 
-    onClose = () => {
-        
-    }
-
     render() {
         return (
             <div id="movies">
                 <Search onSearch={this.onSearch}/>
                 <MovieList movies={this.state.filteredMovies} />
                 <Switch>
-                    <Route path="/movie/:id" render={({match}) => {
+                    <Route path="/movie/:id" render={({history, match}) => {
                         let movie = this.getMovie(match.params.id)
 
                         if (movie === undefined) {
                             return "No movie with that id was found"
                         } else {
-                            return <MovieDetails movie={movie} onClose="/movies" />
+                            return <MovieDetails movie={movie} onClose={() => {
+                                history.goBack()
+                            }} />
                         }
                     }} />
                 </Switch>
