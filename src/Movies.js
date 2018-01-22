@@ -13,8 +13,7 @@ export default class Movies extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            filteredMovies: null,
-            selectedMovie: null
+            filteredMovies: null
         }
     }
 
@@ -42,10 +41,6 @@ export default class Movies extends React.Component {
         return this.state.filteredMovies.find(movie => movie.id === Number(id))
     }
 
-    onClose = () => {
-
-    }
-
     render() {
         return (
             this.state.filteredMovies ? (
@@ -53,7 +48,6 @@ export default class Movies extends React.Component {
                     <Header title="Movie list" />
                     <Search onSearch={this.onSearch} />
                     <MovieList movies={this.state.filteredMovies} />
-
                     <Route path="/movies/:id" render={({ history, match }) => {
                         let movie = this.getMovie(match.params.id)
                         if (movie === undefined) {
@@ -66,8 +60,8 @@ export default class Movies extends React.Component {
                     }} />
                 </div >
             ) : (
-                    <div>Loading...</div>
-                )
+                <div>Loading...</div>
+            )
         )
     }
 }
