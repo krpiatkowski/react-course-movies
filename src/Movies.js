@@ -17,7 +17,6 @@ export default class Movies extends React.Component {
         this.state = {
             movies: [],
             filteredMovies: [],
-            selectedMovie: null
         }
     }
 
