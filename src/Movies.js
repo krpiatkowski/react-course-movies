@@ -10,8 +10,8 @@ export default class Movies extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: [],
-            filteredMovies: [],
+            movies: null,
+            filteredMovies: null,
             selectedMovie: null
         }
     }
@@ -42,20 +42,24 @@ export default class Movies extends React.Component {
     }
 
     onClose = () => {
-        this.setState({selectedMovie: null})
+        this.setState({ selectedMovie: null })
     }
 
     render() {
         return (
-            <div id="movies">
-                <Search onSearch={this.onSearch}/>
-                <MovieList movies={this.state.filteredMovies} onSelectMovie={this.onSelectMovie} />
-                {
-                    this.state.selectedMovie && (
-                        <MovieDetails movie={this.state.selectedMovie} onClose={this.onClose}/>
-                    )
-                }
-            </div >
+            this.state.filteredMovies ? (
+                <div id="movies">
+                    <Search onSearch={this.onSearch} />
+                    <MovieList movies={this.state.filteredMovies} onSelectMovie={this.onSelectMovie} />
+                    {
+                        this.state.selectedMovie && (
+                            <MovieDetails movie={this.state.selectedMovie} onClose={this.onClose} />
+                        )
+                    }
+                </div >
+            ) : (
+                <div>Loading...</div>
+            )
         )
     }
 }
