@@ -59,16 +59,20 @@ it('can render 2 movies', () => {
     expect(movieList.find("#movie-list").children().length).toBe(2)
 })
 
+//Buckle up cowboy
 it('can navigate', () => {
+    //Hold reference to location :/
     let currentLocation
     const movieList = mount(
         <MemoryRouter>
+            {/* Extract location */}
             <Route render={({location}) => {
                 currentLocation = location
                 return <MovieList movies={movies} />
             }} />
         </ MemoryRouter>
     )
+    //Real clicking
     movieList.find("#movie-list a").at(0).props().onClick(new MouseEvent('click'))
     expect(currentLocation.pathname).toBe(`/movie/${movies[0].id}`)
 })
